@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,12 +9,11 @@
     :root{
       /* Accessible 60/30/10 palette with a clearly non‑white background */
       --background:#C7DDE6;   /* 60% soft glacier blue (page background) */
-      --primary:#1E6D83;      /* 30% ocean teal (headings, band, secondary buttons) */
+      --primary:#155A6B;      /* 30% ocean teal (headings, band, secondary buttons) */
       --accent:#FFB703;       /* 10% amber (primary CTA buttons) */
-
       --text:#102A43;         /* dark slate body text */
       --muted:#486581;        /* secondary text */
-      --card:#E6EEF2;         /* card surfaces */
+      --card:#DEE8EE;         /* card surfaces */
       --border:rgba(16,42,67,.12);
       --shadow:0 8px 20px rgba(16,42,67,.08);
       --radius:16px;
@@ -43,7 +41,7 @@
            background:rgba(30,109,131,.12); color:var(--primary); border:1px solid rgba(30,109,131,.25); margin-top:8px}
 
     /* Sections */
-    section{padding:24px 0}
+    section{padding:25px 0}
     .section-title{font-size:28px; margin:0 0 8px; color:var(--primary)}
     .section-sub{color:var(--muted); margin:0 0 24px}
     .muted{color:var(--muted)}
@@ -51,9 +49,9 @@
     /* Hero */
     .hero{padding:32px 0 20px}
     .hero-grid{display:grid; gap:28px; grid-template-columns:1.15fr .85fr; align-items:center}
-    .title{font-size:clamp(30px,6vw,52px); line-height:1.12; margin:12px 0 8px; color:var(--primary)}
+    .title{font-size:clamp(30px,6vw,52px); line-height:1.12; margin:5px 0 8px 2px; color:var(--primary)}
     .subtitle{color:var(--muted)}
-    .hero-card{background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:20px; box-shadow:var(--shadow)}
+    .hero-card{background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:0px 10px 10px 20px; box-shadow:var(--shadow)}
     .stats{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:16px}
     .stat{background:var(--card); border:1px solid var(--border); border-radius:14px; padding:14px; text-align:center}
     .stat b{display:block; color:var(--primary)}
@@ -68,20 +66,23 @@
 
     /* Grids & cards */
     .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+    .grid-3 .card h3{margin-top:4px}
     .pricing{display:grid; grid-template-columns:1fr 1fr; gap:18px}
-    .card,.price{padding:22px; border-radius:var(--radius); border:1px solid var(--border); background:var(--card); box-shadow:var(--shadow)}
+    .price.get-website{grid-column:1 / -1; background:#CADCE3; color:var(--text)}
+    .card,.price{padding:4px 10px 20px 25px; border-radius:var(--radius); border:1px solid var(--border); background:var(--card); box-shadow:var(--shadow)}
     .price .amount{font-size:28px; font-weight:900; color:var(--primary)}
 
     /* Footer & sticky CTA */
     footer{border-top:1px solid var(--border); padding:28px 0; color:var(--muted); background:var(--card)}
     .cta-bar{position:sticky; bottom:0; z-index:40; background:var(--card); border-top:1px solid var(--border); padding:10px 0}
     .cta-inner{display:flex; gap:10px; align-items:center; justify-content:center}
+    .cta-bar .btn.primary{padding:10px 14px; font-size:0.95rem}
 
     
     /* Alternating bands */
     :root{
       --bg-dark:#184F60;     /* deep teal for dark bands */
-      --bg-light:#D3E6EE;    /* pale blue for light bands */
+      --bg-light:#C5DAE5;    /* pale blue for light bands */
     }
     .band-dark{background:var(--bg-dark); color:#fff}
     .band-dark .section-title{color:#fff}
@@ -115,13 +116,13 @@
 <body>
   <header>
     <div class="container nav">
-      <a href="#" class="brand"><svg class="logo" width="28" height="28" viewBox="0 0 64 64" aria-hidden="true" style="vertical-align:middle;margin-right:8px"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1E6D83"/><stop offset="1" stop-color="#0F3E4B"/></linearGradient></defs><rect x="6" y="6" width="52" height="52" rx="14" fill="url(#g)"/><path d="M32 20v24M20 32h24" stroke="#FFB703" stroke-width="6" stroke-linecap="round"/></svg><span>CareConnect</span></a>
+      <a href="#" class="brand"><svg class="logo" width="40" height="40" viewBox="0 0 64 64" aria-hidden="true" style="vertical-align:middle;margin-right:8px"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1E6D83"/><stop offset="1" stop-color="#0F3E4B"/></linearGradient></defs><rect x="6" y="6" width="52" height="52" rx="14" fill="url(#g)"/><path d="M32 20v24M20 32h24" stroke="#FFB703" stroke-width="6" stroke-linecap="round"/></svg><span style="font-size: 26px">CareConnect</span></a>
       <nav class="menu" id="menu" role="navigation">
-        <a href="#about">About us</a>
         <a href="#features">Features</a>
         <a href="#pricing">Pricing</a>
         <a href="#contact">Contact</a>
-        <a class="btn primary" href="#examples">About us</a>
+        <a class="btn primary" href="#examples">Example Websites</a> 
+         <a class="btn secondary" href="#examples">Who are we?</a>
       </nav>
       <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
     </div>
@@ -132,12 +133,9 @@
     <section class="hero" id="home">
       <div class="container hero-grid">
         <div>
-          <h1 class="title">Websites for doctors</h1>
-          <p class="subtitle">Run by doctors for doctors.</p>
-          <div class="badge">Australian developers &mdash; easy to deal with</div>
+          <h2 style="font-size:30px" class="title">Run by doctors like you</h2>
           <div style="display:flex; gap:10px; margin-top:16px; flex-wrap:wrap">
-            <a class="btn primary" href="#contact">Get a Website — $500</a>
-            <a class="btn secondary" href="#pricing">See pricing</a>
+            <a class="btn primary" href="#contact">Get a Website</a>
           </div>
           <div class="stats">
             <div class="stat"><b>Accept new patients</b><span class="muted">Clear calls to action</span></div>
@@ -146,9 +144,9 @@
           </div>
         </div>
         <div class="hero-card">
-          <h2>About us</h2>
+          <h3 style="color:#000"> About Us</h3>
           <ul class="muted">
-            <li><strong>Australian developers</strong> who make the process simple</li>
+            <li><strong>Australian Doctors and Developers</strong> working together to make the process simple</li>
             <li>Modern designs tailored to your practice</li>
             <li>Maps, navigation, locations & hospital affiliations</li>
             <li>Fast Australian hosting from $30 p/m</li>
@@ -159,10 +157,10 @@
     </section>
 
     <!-- Examples -->
-    <section id="about" class="band-dark">
+    <section id="examples" style="padding-top:8px;" class="band-dark">
       <div class="container">
-        <h2 class="section-title">About us</h2>
-        <p class="section-sub">Templates we tailor to your brand and content.</p>
+        <h2 class="section-title">What we do</h2>
+        <p class="section-sub style="color:#EAF6FA" style="color:#EAF6FA"" style="color:var(--text)">Templates we tailor to your brand and content.</p>
         <div class="grid-3">
           <div class="card"><h3>Specialist Profile</h3><p class="muted">Bio, procedures, hospitals & referrals.</p><p><a class="btn ghost" href="#contact">Use this layout</a></p></div>
           <div class="card"><h3>Multi‑location Clinic</h3><p class="muted">Locations, maps, parking & bookings.</p><p><a class="btn ghost" href="#contact">Use this layout</a></p></div>
@@ -175,7 +173,7 @@
     <section id="features" class="band-light">
       <div class="container">
         <h2 class="section-title">Built for healthcare</h2>
-        <p class="section-sub" style="color:#E3F6FF">Present your expertise clearly and help patients get in touch fast.</p>
+        <p class="section-sub style="color:var(--text)" style="color:var(--text)"" style="color:#E3F6FF">Present your expertise clearly and help patients get in touch fast.</p>
         <div class="grid-3">
           <div class="card"><h3>Professional branding</h3><p class="muted">Accessible colours, readable type, medical‑grade clarity.</p></div>
           <div class="card"><h3>Designed for mobile & desktop</h3><p class="muted">Fast, responsive builds with clear CTAs.</p></div>
@@ -190,8 +188,8 @@
         <h2 class="section-title">Simple, transparent pricing</h2>
         <div class="pricing">
           
-<div class="price" style="grid-column:1/-1">
-  <h4>Get a website</h4>
+<div class="price get-website" style="background:#CADCE3;color:var(--text)" style="grid-column:1/-1" style="grid-column:1 / -1; background:#CADCE3; color:var(--text)" style="grid-column:1 / -1; background:#CADCE3; color:var(--text)" style="grid-column:1 / -1; background:#CADCE3; color:var(--text)" style="grid-column:1 / -1; background:#CADCE3; color:var(--text)">
+            <h4>Standard Website For Doctors</h4>
   <div class="amount">$500</div>
   <p class="section-sub">Single‑page website + contact form</p>
   <ul class="muted" style="margin:0; padding-left:18px">
@@ -202,28 +200,27 @@
   <div style="margin-top:14px"><a class="btn primary" href="#contact">Get Started</a></div>
 </div>
 
-          <div class="price">
+          <div class="price" style="background:#CADCE3; color:var(--text)">
             <h4>Managed hosting</h4>
             <div class="amount">$30 p/m</div>
             <p class="section-sub">Australian hosting + updates</p>
-            <ul class="muted" style="margin:0; padding-left:18px">
+            <ul class="muted" style="margin:0; padding-left:15px">
               <li>Security updates & backups</li>
               <li>Performance monitoring</li>
               <li>Minor content updates</li>
             </ul>
           </div>
-          <div class="price">
+          <div class="price" style="background:#CADCE3; color:var(--text)">
             <h4>Multiple profiles</h4>
             <div class="amount">From $1,500</div>
             <p class="section-sub">Multi‑page site (procedures, locations, bios)</p>
-            <ul class="muted" style="margin:0; padding-left:18px">
+            <ul class="muted" style="margin:0; padding-left:15px">
               <li>Referral upload form</li>
               <li>Multiple clinicians</li>
               <li>Ideal for clinics</li>
             </ul>
           </div>
         </div>
-        <p class="section-sub" style="margin-top:10px">All prices AUD. GST may apply.</p>
       </div>
     </section>
 
@@ -232,11 +229,11 @@
       <div class="container">
         <h2 class="section-title">Got a question?</h2>
         <p class="section-sub">Tell us what you need and we’ll send a tailored quote.</p>
-        <div class="grid-3" style="grid-template-columns:1.1fr .9fr; gap:18px">
+        <div class="grid-3" style="grid-template-columns:1.0fr .9fr; gap:15px" >
           <div class="card" style="box-shadow:none">
             <form method="post" action="mailto:hello@careconnect.au" enctype="text/plain">
-              <div class="row">
-                <div>
+              <div class="row" style="padding-top:10px">
+                <div> 
                   <label for="name">Your name</label>
                   <input id="name" name="name" required />
                 </div>
@@ -245,7 +242,7 @@
                   <input id="email" name="email" type="email" required />
                 </div>
               </div>
-              <div class="row">
+              <div class="row" style="padding-top:10px">
                 <div>
                   <label for="role">Role</label>
                   <select id="role" name="role">
@@ -260,7 +257,7 @@
                   <input id="phone" name="phone" type="tel" />
                 </div>
               </div>
-              <div>
+              <div style="padding-top:5px">
                 <label for="message">Project details</label>
                 <textarea id="message" name="message" placeholder="Pages needed, existing site, timeframe…"></textarea>
               </div>
@@ -270,13 +267,14 @@
             </form>
           </div>
           <div class="card" style="box-shadow:none">
+<BR>
             <h3>Australian‑built websites</h3>
             <ul class="muted" style="margin:6px 0 0; padding-left:18px">
               <li>Tailored for medical professionals and clinics</li>
               <li>Local, plain‑English support</li>
               <li>Fast hosting and regular updates</li>
             </ul>
-            <div style="margin-top:12px">
+            <div style="margin-top:25px">
               <h3>What we’ll need</h3>
               <ul class="muted" style="margin:0; padding-left:18px">
                 <li>Practice name, logo and colours (if any)</li>
@@ -292,7 +290,7 @@
 
   <div class="cta-bar">
     <div class="container cta-inner">
-      <a class="btn primary" href="#contact">Get a website – $500</a>
+      <a class="btn primary" href="#contact">Get Started</a>
     </div>
   </div>
 
