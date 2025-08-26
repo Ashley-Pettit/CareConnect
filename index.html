@@ -107,10 +107,20 @@
       form .row{grid-template-columns:1fr}
       .menu{display:none}
       .hamburger{display:inline-flex}
+      .mobile-reverse{ display:flex; flex-direction: column-reverse; }
+}
     }
     @media (max-width: 520px){
       .grid-3{grid-template-columns:1fr}
     }
+    @media (max-width: 768px) {
+.australian-built {
+order: 1;
+}
+.tell-us {
+order: 2;
+}
+}
   </style>
 </head>
 <body>
@@ -236,7 +246,7 @@
 
     <!-- Contact -->
     <section id="contact" class="band-light">
-      <div class="container">
+      <div class="container mobile-reverse>
         <h2 class="section-title">Got a question?</h2>
         <p class="section-sub">Tell us what you need and we’ll send a tailored quote.</p>
         <div class="grid-3" style="grid-template-columns:1.0fr .9fr; gap:15px" >
@@ -285,9 +295,9 @@
               <li>Fast hosting and regular updates</li>
             </ul>
             <div style="margin-top:25px">
-              <h3>What we’ll need</h3>
+              <h3>Getting started!</h3>
               <ul class="muted" style="margin:0; padding-left:18px">
-                <li>Practice name, logo and colours (if any)</li>
+                <li>Send us your</li>
                 <li>Clinician bios & qualifications</li>
                 <li>Locations and booking links</li>
               </ul>
