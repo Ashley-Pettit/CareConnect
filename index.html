@@ -105,9 +105,7 @@
       .grid-3{grid-template-columns:1fr 1fr}
       .pricing{grid-template-columns:1fr}
       form .row{grid-template-columns:1fr}
-      .menu{display:none}
-      .hamburger{display:inline-flex}
-      .mobile-reverse{ display:flex; flex-direction: column-reverse; }
+      .hideonmobile {display:none}
 }
     }
     @media (max-width: 520px){
@@ -124,8 +122,8 @@
         <a href="#features">Features</a>
         <a href="#pricing">Pricing</a>
         <a href="#contact">Contact</a>
-        <a class="btn primary" href="#examples">Example Websites</a> 
-         <a class="btn secondary" href="#examples">Who are we?</a>
+        <a class="btn primary hideonmobile" href="#examples">Example Websites</a> 
+        <a class="btn secondary hideonmobile" href="#examples">Who are we?</a>
       </nav>
       <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
     </div>
@@ -140,15 +138,32 @@
           <div style="display:flex; gap:10px; margin-top:16px; flex-wrap:wrap">
             <a class="btn primary" href="#contact">Get a Website</a>
           </div>
-          <div class="stats">
-            <div class="stat"><b>Accept new patients</b><span class="muted">Allow GPs to refer patients via your website</span></div>
-            <div class="stat"><b>Avoid No-Shows</b><span class="muted">Patients won't get lost with our Google powered automatic directions</span></div>
 
-            <div class="stat"><b>Professional Image</b><span class="muted"></span>Our branding looks and feels professional just like your medical knowledge</div>
+
+          <div class="stats">
+<div class="stat">
+  <b>
+    <span style="display:block; padding-bottom:5px;">Accept new patients</span>
+  </b>
+  <span class="muted">Allow GPs to refer patients via your website</span>
+</div>
+<div class="stat">
+  <b>
+    <span style="display:block; padding-bottom:5px;">Avoid No-Shows</span>
+  </b>
+  <span class="muted">Patients won't get lost with our Google powered automatic directions</span>
+</div>
+<div class="stat">
+  <b>
+    <span style="display:block; padding-bottom:5px;">Professional Image</span>
+  </b>
+  <span class="muted">Our branding looks and feels professional just like your medical knowledge</span>
+</div>
+
           </div>
         </div>
         <div class="hero-card">
-          <h3 style="color:#000">amount About Us</h3>
+          <h3 style="color:#000">About Us</h3>
           <ul class="muted">
             <li><strong>Australian Doctors and Developers</strong> working together to make the process simple</li>
             <li>Modern designs tailored to your practice</li>
